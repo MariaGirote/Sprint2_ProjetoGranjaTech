@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.cabecalho {
+    border: 5px solid green;
+    text-align: center;
+    color: black;
+    background-color: yellow;
+    border-radius: 2em;
+    margin-bottom: 2em;
+}
+
+span {
+    font-size: 1.5em;
+    color: black;
+    text-shadow: 0.2px 0.2px 0.2px black;
+}
+
+
+/* body{
+
+} */
+
+main {
+    border: 3px solid red;
+}
+
+label {
+    font-size: 1.3em;
+}
+
+input {
+    border-radius: 7px;
+    outline: none;
+    width: 100%;
+}
+
+h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    align-items: flex-start;
+    height: 90px;
+    font-size: 40px;
+}
+.section_inputs {
+    border: 3px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(https://i5.walmartimages.com/asr/d2dc1006-0d08-4fc5-ac7b-e4d3203ee2c2_1.c2b8214ebbe0f5dbe2d952ef070ae31f.jpeg); */
+    background: #4A3D33;
+    background: linear-gradient(100deg, #4A3D33 0%), rgb(98, 65, 46); 
+    height: 50vh;
+    border-radius: 40px;
+}
+
+.div_inputs {
+    border: 3px solid orange;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    color: white;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    border: 5px solid pink;
+    width: 100%;
+    align-items: center;
+    margin-top: 15px; /* Pra dar um espaço */
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 500px;
+    height: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    letter-spacing: 2px;
+}
+
+.section_resultados {
+    border: 3px solid yellow;
+    height: 50vh;
+}
+
+h4 {
+    font-size: 2em;
+}
+
