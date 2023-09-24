@@ -9,12 +9,15 @@
 }
 
 .cabecalho {
-    border: 5px solid green;
     text-align: center;
     color: black;
-    background-color: yellow;
     border-radius: 2em;
     margin-bottom: 2em;
+    background: rgb(250, 249, 247);
+    box-shadow: 10px 10px 40px #d9d9d9, -10px -10px 40px #b4b3b3;
+    border-bottom: 3px solid #d9d9d9;
+    border-right: 3px solid #d9d9d9;
+
 }
 
 span {
@@ -25,21 +28,55 @@ span {
 
 
 /* body{
-
+width: auto;
 } */
 
 main {
-    border: 3px solid red;
+    width: auto;
 }
 
 label {
     font-size: 1.3em;
+    margin: 0;
 }
 
 input {
     border-radius: 7px;
     outline: none;
-    width: 100%;
+    width: 75%;
+    color: black;
+    font-weight: 700;
+    display: flex;
+    border: none;
+}
+
+.input_grupo1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.input_grupo2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input_grupo3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input_grupo4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 h2 {
@@ -49,24 +86,24 @@ h2 {
     height: 90px;
     font-size: 40px;
 }
+
 .section_inputs {
-    border: 3px solid blue;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-image: url(https://i5.walmartimages.com/asr/d2dc1006-0d08-4fc5-ac7b-e4d3203ee2c2_1.c2b8214ebbe0f5dbe2d952ef070ae31f.jpeg); */
     background: #4A3D33;
-    background: linear-gradient(100deg, #4A3D33 0%), rgb(98, 65, 46); 
-    height: 50vh;
-    border-radius: 40px;
+    background: linear-gradient(100deg, #4A3D33 0%), rgb(98, 65, 46);
+    height: 100%;
+    border-radius: 4em;
+    box-shadow: 10px 10px 40px rgb(98, 65, 46), -0.1px -0.1px 15px rgb(98, 65, 46);
 }
 
 .div_inputs {
-    border: 3px solid orange;
     display: flex;
     justify-content: space-between;
     flex-flow: wrap;
+    width: 90%;
     color: white;
 }
 
@@ -75,10 +112,10 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     gap: 15px;
-    border: 5px solid pink;
     width: 100%;
     align-items: center;
-    margin-top: 15px; /* Pra dar um espaço */
+    margin-top: 15px;
+    /* Pra dar um espaço */
 }
 
 button {
@@ -96,11 +133,80 @@ button {
 }
 
 .section_resultados {
-    border: 3px solid yellow;
-    height: 50vh;
+    border: 3px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    background: rgb(250, 249, 247);
+    border-radius: 10em;
+    box-shadow: 10px 10px 40px #d9d9d9, -10px -10px 40px #b4b3b3;
+    border-bottom: 3px solid #d9d9d9;
+    border-right: 3px solid #d9d9d9;
+    margin-top: 2em;
+
 }
 
 h4 {
+    margin-top: 5%;
     font-size: 2em;
 }
 
+.titulo_simulador{
+    margin-left: 24%;
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+}
+
+@keyframes girar {
+    from {
+        transform: rotateX(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+#galinhaAnimada {
+    animation: girar 10s infinite;
+    transition-duration: 5s;
+    height: 60%;
+    width: 30%;
+}
+
+.choque {
+    display: flex;
+    margin-right: 6em;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao_chocado{
+    background-color: whitesmoke;
+    height: fit-content;
+    color: red;
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+    border-radius: 0.5em;
+    box-shadow: 10px 10px 40px #d9d9d9, -10px -10px 40px #ffffff;
+    border-bottom: 3px solid #d9d9d9;
+    border-right: 3px solid #d9d9d9;
+    letter-spacing: 2px;
+    animation: piscar 5s infinite;
+}
+
+@keyframes piscar {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+}

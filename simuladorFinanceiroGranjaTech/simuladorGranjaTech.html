@@ -25,30 +25,91 @@
             <div class="div_inputs">
                 <div class="input_grupo1">
                     <label>Quantidade de galinhas </label> <br>
-                    <input type="number"> <br>
+                    <input type="number" id="input_galinhas"> <br>
                 </div>
                 <div class="input_grupo2">
+                    <label>Quantas galinhas morrerem por ano?</label> <br>
+                    <input type="number" id="input_galinhas_morte"> <br>
+                </div>
+                <div class="input_grupo3">
                     <label>Qtd de ovos vendidos mensal</label> <br>
-                    <input type="number"> <br>
+                    <input type="number" id="input_qtd_ovo"> <br>
                 </div>
-                <div>
-                    <label class="input_grupo3">Preço média de venda do ovo</label> <br>
-                    <input type="number"> <br>
+                <div class="input_grupo4">
+                    <label>Preço médio de venda do ovo</label> <br>
+                    <input type="number" id="input_preco_ovo"> <br>
                 </div>
-                
+
                 <div class="botoes">
-                    <button>Calcular</button>
-                    <button>Limpar</button>
+                    <button onclick="calcular()">Calcular</button>
+                    <button onclick="limparGalinha()">Limpar</button>
                 </div>
             </div>
         </section>
 
         <section class="section_resultados">
-            <h4>
-                Preencha os campos acima (COLOCAR UMA LOGO BEM AQUI, ENQUANTO O USUÁRIO NÃO PREENCHE)
-            </h4>
+            <div id="div_html">
+                <h4>
+                    Preencha os campos acima para saber seus resultados
+                </h4>
+                <div>
+                    <img src="./Galinha_icon.webp" alt="Icone da galinha" id="galinhaAnimada">
+                </div>
+            </div>
+            <div class="choque">
+                <button class="botao_chocado">Ficou chocado? Clique aqui!!!</button>
+            </div> 
         </section>
     </main>
 </body>
 
 </html>
+
+<script>
+    function calcular() {
+        var galinhas = Number(input_galinhas.value);
+        var galinhasMortas = Number(input_galinhas_morte.value);
+        var qtdOvo = Number(input_qtd_ovo.value);
+        var precoOvo = Number(input_preco_ovo.value);
+        // inputs do simulador
+        var galinhasPerdidas = galinhas / galinhasMortas  // Média de galinhas perdidas
+        var ovoPorGalinha = qtdOvo / galinhas  // Ovos gerados por galinha
+        var ovoPorGalinhaPerdido = ovoPorGalinha * galinhasMortas // Quantidade de ovos perdidos por galinha (NAO SEI SE TÁ CERTO AAAAAAAAAAAAAAAAAAAAAAA) galinhasPerdidas / ovoPorGalinha
+        var lucro = qtdOvo * precoOvo // Lucro em cima da quantidade de ovos e do preço do ovo
+        var lucroPerdido = (ovoPorGalinhaPerdido * precoOvo)  // média de ovos por galinha perdidas pelo preço do ovo unitário gera o lucro perdido
+
+        div_html.innerHTML = `
+        <div class = 'baixo_simulador'>
+        <h1 class ='titulo_simulador'> 
+            De suas <b style="color: red;"> ${galinhas} </b> galinhas, em média <b style="color: red;"> ${(galinhasPerdidas).toFixed(3)}%. </b> delas morrem por falta de monitoramento de regulação da temperatura e umidade, com <b style="color: red;"> ${galinhasMortas} </b> galinhas a menos, devido a perda de <b style="color: red;">${(ovoPorGalinhaPerdido).toFixed(0)} </b> ovos, isso faz você deixar de ganhar:
+        </h1>
+        <h2 style="color: red;">R$ ${(lucroPerdido).toFixed(2)} mensalmente </h2> 
+        <h2 style="color: red;">R$ ${(lucroPerdido * 6).toFixed(2)} a cada 6 meses </h2>
+        <h2 style="color: red;">R$ ${(lucroPerdido * 12).toFixed(2)} anualmente </h2>
+        <h2 style="color: red;">R$ ${((lucroPerdido * 12) * 5).toFixed(2)} a cada 5 anos </h2>
+        
+        <img src="./Galinha_icon.webp" alt="Icone da galinha" id="galinhaAnimada">
+        </div>
+        
+        `
+
+    }
+
+    function limparGalinha() {
+        galinhas = '';
+        galinhasMortas = '';
+        qtdOvo = '';
+        precoOvo = '';
+
+        div_html.innerHTML = `
+        <h4>
+            Preencha os campos acima para saber seus resultados
+        </h4>
+        <div>
+            <img src="./Galinha_icon.webp" alt="Icone da galinha" id="galinhaAnimada">
+        </div>
+        `
+    }
+
+
+</script>
